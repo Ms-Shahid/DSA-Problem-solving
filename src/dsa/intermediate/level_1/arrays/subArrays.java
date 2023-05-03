@@ -55,26 +55,10 @@ public class subArrays {
 		* output - 20
 		* */
 		long sum = 0;
-		int prefixSum[] = prefixSum(A);
-		for(int start = 0; start < A.length; start++){
 
-			for(int end = start; end < A.length; end++){
-				sum += (start == 0) ? prefixSum[end] : prefixSum[end] - prefixSum[start - 1];
-			}
-		}
 		return sum;
 	}
 
-	private static int[] prefixSum (int[] arr) {
 
-		int length = arr.length;
-		int prefix[] = new int[length];
-		prefix[0] = prefix[0];
-
-		for(int i = 1; i < length; i++){
-			prefix[i] = prefix[i-1] + arr[i];
-		}
-		return prefix;
-	}
 
 }
